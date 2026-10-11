@@ -2,7 +2,9 @@
 
 Also... ich kenne mich noch nicht so gut aus mit Servern, wie sie miteinander interagieren, wie man sie sichert und wie man sie bedient. Dieses Home-Lab soll mir als Einstieg in diesen Teilbereich der Informatik dienen. Im Repo werde ich dokumentieren was ich mache.
 
-Zusammen mit einem LLM habe ich einen Plan für ein Home-Lab erstellt (auf Basis von menschlichen Emopfehlungen). Der Plan sieht wie folgt aus: 
+## Der Plan 
+
+Zusammen mit einem LLM habe ich einen Plan für ein Home-Lab erstellt (auf Basis von menschlichen Empfehlungen), der wie folgt aussieht:
 
 1. Virtuellen Server aufsetzen:
    - Ubuntu Server als virtuelle Maschine mit VirtualBox erstellen
