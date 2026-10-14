@@ -46,7 +46,9 @@ Zusammen mit einem LLM habe ich einen Plan für ein Home-Lab erstellt (auf Basis
    - Den Fehler mithilfe von Logs, Netzwerk- und Docker-Werkzeugen untersuchen
    - Ursache finden, Problem beheben und Lösungsweg dokumentieren.
 
-## Schritt 1: Aufsetzung des virtuellen Servers
+## Dokumentation der Ausführung des Plans
+
+### Schritt 1: Aufsetzung des virtuellen Servers
 ![Laufender Ubuntu Server](Screenshots/1.ScreenshotHomeLab.png)
 
 Ich habe einen virtuellen Server aufgesetzt und darauf Linux installiert. Ich habe keinen extra Computer den ich für das Home-Lab opfern kann, deswegen die Verwendung einer "virtuellen Maschine". 
