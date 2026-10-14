@@ -48,3 +48,6 @@ Zusammen mit einem LLM habe ich einen Plan für ein Home-Lab erstellt (auf Basis
 
 ## Schritt 1: Aufsetzung des virtuellen Servers
 ![Laufender Ubuntu Server](Screenshots/1.ScreenshotHomeLab.png)
+
+Ich habe einen virtuellen Server aufgesetzt und darauf Linux installiert. Ich habe keinen extra Computer den ich für das Home-Lab opfern kann, deswegen die Verwendung einer "virtuellen Maschine". 
+Um es in meinen Worten zusammenzufassen: Ich habe einen Computer in meinem Computer geöffnet und darauf ein Linux Betriebssystem ohne UI installiert. So wie ich das verstanden habe, ist ein Server im Grunde ein Computer, der die Berechnungen für einen anderen Computer (Client) ausführt. Mein Pc hat 16 CPU Kerne, 32 GB RAM und momentan 140GB freien SSD Speicherplatz. Der virtuellen Maschine habe ich 2 Kerne, 4GB RAM und 35GB Speicher verwiesen. Die empfohlenen Mindestanforderungen für einen Server laut Ubuntu sind 3GB RAM und 25GB Speicher. Virtueller Server und mein Computer laufen gleichzeitig, also sollte ich auf keinen Fall die ganze Rechenpower meines PCs verwenden.
