@@ -47,4 +47,4 @@ Zusammen mit einem LLM habe ich einen Plan für ein Home-Lab erstellt (auf Basis
    - Ursache finden, Problem beheben und Lösungsweg dokumentieren.
 
 ## Schritt 1: Aufsetzung des virtuellen Servers
-![Laufender Ubuntu Server](1.ScreenshotHomeLab.png)
+![Laufender Ubuntu Server](images/1.ScreenshotHomeLab.png)
