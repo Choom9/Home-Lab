@@ -45,3 +45,6 @@ Zusammen mit einem LLM habe ich einen Plan für ein Home-Lab erstellt (auf Basis
    - Einen Dienst absichtlich stoppen oder falsch konfigurieren
    - Den Fehler mithilfe von Logs, Netzwerk- und Docker-Werkzeugen untersuchen
    - Ursache finden, Problem beheben und Lösungsweg dokumentieren.
+
+## Schritt 1: Aufsetzung des virtuellen Servers
+![Laufender Ubuntu Server](1.ScreenshotHomeLab.png)
