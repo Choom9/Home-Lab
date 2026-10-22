@@ -1,6 +1,6 @@
 # Home-Lab
 
-Also... ich kenne mich noch nicht so gut aus mit Servern, wie sie miteinander interagieren, wie man sie sichert und wie man sie bedient. Dieses Home-Lab soll mir als Einstieg in diesen Teilbereich der Informatik dienen. Im Repo werde ich dokumentieren was ich mache. Außerdem erkläre ich für mich Konzepte und Vorgänge. 
+Also... ich kenne mich noch nicht so gut aus mit Servern, wie sie miteinander interagieren, wie man sie sichert und wie man sie bedient. Dieses Home-Lab soll mir als Einstieg in diesen Teilbereich der Informatik dienen. Im Repo werde ich dokumentieren was ich mache. Außerdem erkläre ich Konzepte und Vorgänge, denn "Darüber geschrieben bedeutet für mich auch darüber gedacht" und das ist Teil des Projekt-Ziels.
 
 ## Der Plan 
 
@@ -75,8 +75,12 @@ weiss: "10.0.2.15" -> Die IPv4-Adresse meiner VM an der Netzwerkschnittstelle en
 Als nächstes wollte ich schauen, ob der SSD Dienst erreichbar bereitsteht. Um das herauszufinden, benutzte ich den Befehlt "systemctl status ssh"
 Das Ergebnis war "Active: Inactive (Dead)
 
-!["Funktioniert SSH auf dem Server?"](Screenshots/SSHaufServerCheck.png)
+![Funktioniert SSH auf dem Server?](Screenshots/SSHaufServerReadyCheck.png)
 
 Deswegen musste ich den Befehl "sudo systemctl start ssh" ausführen -> ich habe SSH mit administrator Rechten gestartet. Dann habe ich wieder "system status ssh". ERGEBNIS: SSH LÄUFT! und ich konnte die port Nummer ablesen (Port 22). Ok was ist ein Port? Also: Die IP-Adresse sagt "welcher Rechner" angesprochen werden soll und der Port sagt "welcher Dienst" auf diesem Rechner angesprochen werden soll.
 Das heißt der SSH Dienst läuft auf Port 22. Wenn ich das kombiniere mit der IP Adresse meiner VM habe ich die Adresse, die ich mit meinem PC erreichen will: 10.0.2.15:22
+
+![SSH zum Laufen gebracht und Port Herausgefunden](Screenshots/SSH_läuft_und_Port_ist_da.png)
+
+Ok aber... so wie ich das verstanden habe läuft die VM auf NAT (Network Address Translation) - dem Standard Netzwerkmodus in Virtual Box. Ich habe nicht genau verstanden was NAT ist aber ich habe gelesen, dass dieser Modus praktisch gesehen für meine VM bedeutet, dass sie leicht ins Internet zugreifen kann (über meinen Windows PC) aber andere Systeme nicht auf die VM zugreifen können. Ich will ja aber, dass mein PC auf Home-lab zugreifen kann. Deswegen muss ich die Netzwerkeinstellung ändern
 
