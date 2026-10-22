@@ -85,4 +85,6 @@ Das heißt der SSH Dienst läuft auf Port 22. Wenn ich das kombiniere mit der IP
 Ok aber... so wie ich das verstanden habe läuft die VM auf NAT (Network Address Translation) - dem Standard Netzwerkmodus in Virtual Box. Ich habe nicht genau verstanden was NAT ist aber ich habe gelesen, dass dieser Modus praktisch gesehen für meine VM bedeutet, dass sie leicht ins Internet zugreifen kann (über meinen Windows PC) aber andere Systeme nicht auf die VM zugreifen können. Ich will ja aber, dass mein PC auf Home-lab zugreifen kann. Deswegen muss ich die Netzwerkeinstellung ändern
 
 Über Oracle Virtual Box habe ich eine Portweiterleitung hergestellt. Das bedeutet ich sage dem System: Wenn etwas von xxx Ip Adresse + Port ankommt schicke es an xxx Ip Adresse + Port. 
+![Angaben zur Portweiterleitung](Screenshots/PortWeiterLeitung.png)
+
 
