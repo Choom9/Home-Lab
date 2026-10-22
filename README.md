@@ -72,7 +72,7 @@ orange: "link/ether" -> Die folgende Schnittstelle ist vom Typ Loopback
 
 weiss: "10.0.2.15" -> Die IPv4-Adresse meiner VM an der Netzwerkschnittstelle enp0s3; DIE BRAUCHE ICH
 
-Als nächstes wollte ich schauen, ob der SSD Dienst erreichbar bereitsteht. Um das herauszufinden, benutzte ich den Befehlt "systemctl status ssh"
+Als nächstes wollte ich schauen, ob der SSH Dienst erreichbar bereitsteht. Um das herauszufinden, benutzte ich den Befehlt "systemctl status ssh"
 Das Ergebnis war "Active: Inactive (Dead)
 
 ![Funktioniert SSH auf dem Server?](Screenshots/SSHaufServerReadyCheck.png)
@@ -82,11 +82,26 @@ Das heißt der SSH Dienst läuft auf Port 22. Wenn ich das kombiniere mit der IP
 
 ![SSH zum Laufen gebracht und Port Herausgefunden](Screenshots/SSH_läuft_und_Port_ist_da.png)
 
-Ok aber... so wie ich das verstanden habe läuft die VM auf NAT (Network Address Translation) - dem Standard Netzwerkmodus in Virtual Box. Ich habe nicht genau verstanden was NAT ist aber ich habe gelesen, dass dieser Modus praktisch gesehen für meine VM bedeutet, dass sie leicht ins Internet zugreifen kann (über meinen Windows PC) aber andere Systeme nicht auf die VM zugreifen können. Ich will ja aber, dass mein PC auf Home-lab zugreifen kann. Deswegen musste ich die Netzwerkeinstellung ändern.
+Ok aber... so wie ich das verstanden habe läuft die VM auf NAT (Network Address Translation) - dem Standard Netzwerkmodus in Virtual Box. Ich habe nicht genau verstanden was NAT ist aber ich habe gelesen, dass dieser Modus praktisch gesehen für meine VM bedeutet, dass sie leicht ins Internet zugreifen kann (über meinen Windows PC) aber andere Systeme nicht auf die VM zugreifen können. Ich will ja aber, dass mein PC auf Home-lab zugreifen kann. Deswegen musste ich die Netzwerkeinstellung ändern. Wenn ich über Powershell versuchen würde direkt die Adresse 10.0.2.15:22 anzusteuern, würde das nicht klappen.
 
 Über Oracle Virtual Box habe ich eine Portweiterleitung hergestellt. Das bedeutet ich sage dem System: Wenn etwas von xxx Ip Adresse + Port ankommt schicke es an xxx Ip Adresse + Port. 
 ![Angaben zur Portweiterleitung](Screenshots/PortWeiterLeitung.png)
+Host -> Angaben zu meiner VM 
+Gast -> Angaben zu meinem PC 
+Gast Port 2222 -> Vorschlag von einem LLM; bei der Wahl dieses Ports geht es einfach darum etwas zu nehmen, was nicht bereits von einem anderen Programm belegt wird
 
 Und dann konnte ich testen ob ich mit meinem PC die VM ansprechen konnte.
 
+Auf gings zu Powershell. Dort gab ich den Befehl "ssh -p 2222 choom9@127.0.0.1" ein.
+ssh -> Startet den SSH Client auf Windows
+-p 2222 -> Benutze Port 2222
+choom9 -> Benutzername, mit dem ich mich bei Ubuntu anmelden will
+@ -> trennt Benutzername und Zieladresse
+127.0.0.1 -> Der Windows PC selbst 
+
+Also zusammengefasst: Verbinde dich als Benutzer Choom9 mit der Adresse 127.0.0.1 (die Adresse meines PCs) über Port 2222. 
+-> Das klappt weil, durch die Portweiterleitung, die Verbindung automatisch an meine Ubuntu VM unter 10.0.1.15 auf Port 22 weitergeleitet wird. 
+
+Dann kam eine Sicherheitsanfrage in der sinngemäß gefragt wurde ob man diesem SSH Server trauen kann. -> YES
+Zum Schluss musste ich noch mein Home-Lab Passwort eingeben... Fertig. Ich konnte meine VM über Powershell von meinem PC steuern.
 
