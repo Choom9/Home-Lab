@@ -74,3 +74,9 @@ weiss: "10.0.2.15" -> Die IPv4-Adresse meiner VM an der Netzwerkschnittstelle en
 
 Als nächstes wollte ich schauen, ob der SSD Dienst erreichbar bereitsteht. Um das herauszufinden, benutzte ich den Befehlt "systemctl status ssh"
 Das Ergebnis war "Active: Inactive (Dead)
+
+!["Funktioniert SSH auf dem Server?"](Screenshots/SSHaufServerCheck.png)
+
+Deswegen musste ich den Befehl "sudo systemctl start ssh" ausführen -> ich habe SSH mit administrator Rechten gestartet. Dann habe ich wieder "system status ssh". ERGEBNIS: SSH LÄUFT! und ich konnte die port Nummer ablesen (Port 22). Ok was ist ein Port? Also: Die IP-Adresse sagt "welcher Rechner" angesprochen werden soll und der Port sagt "welcher Dienst" auf diesem Rechner angesprochen werden soll.
+Das heißt der SSH Dienst läuft auf Port 22. Wenn ich das kombiniere mit der IP Adresse meiner VM habe ich die Adresse, die ich mit meinem PC erreichen will: 10.0.2.15:22
+
