@@ -71,3 +71,6 @@ lila: "enp0s3" -> en = Ethernet, p0 = Bus/Pfad Position (eigentlich gemeint für
 orange: "link/ether" -> Die folgende Schnittstelle ist vom Typ Loopback
 
 weiss: "10.0.2.15" -> Die IPv4-Adresse meiner VM an der Netzwerkschnittstelle enp0s3; DIE BRAUCHE ICH
+
+Als nächstes wollte ich schauen, ob der SSD Dienst erreichbar bereitsteht. Um das herauszufinden, benutzte ich den Befehlt "systemctl status ssh"
+Das Ergebnis war "Active: Inactive (Dead)
