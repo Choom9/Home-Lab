@@ -58,7 +58,7 @@ Um es in meinen Worten zusammenzufassen: Ich habe einen Computer in meinem Compu
 
 Bei diesem Step sorge ich dafür, dass ich meinen Server auch von meinem PC aus steuern und verwalten kann. Dafür brauche ich den Dienst SSH (Secure Shell). SSH ist ein Verfahren mit dem man sich verschlüsselt über ein Netzwerk auf einem andern Rechner anmelden und diesen über die Kommandozeile steuern kann. Damit das funktioniert muss meine VM ein Programm haben, dass SSH Verbindungen annehmen kann (wurde bei meinem Home-Lab schon während der Ubuntu Installation gemacht), und mein PC ein Programm haben, dass SSH Verbindungen starten kann. Ok... Ich starte meinen Server und melde mich an. Jetzt muss ich erstmal die IP Adresse meiner VM herausfinden. Das geht mit dem Befehl: "ip addr". 
 
-![Ausgabe des Befehls: "ip addr"](ipAddrScreen.png)
+![Ausgabe des Befehls: "ip addr"](Screenshots/ipAddrScreen.png)
 
 Das ist ein Bild der Ausgabe nach dem Befehl. Ich habe für mich 5 wichtige Dinge markiert und versuche sie zu erklären:
 blau: "lo:" -> Steht für loopback -> Ist für die Kommunikation innerhalb des Computers. Wenn ein Programm mit einem anderen innerhalb der VM kommuniziert braucht es loopback Angaben
