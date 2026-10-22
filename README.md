@@ -86,6 +86,7 @@ Ok aber... so wie ich das verstanden habe läuft die VM auf NAT (Network Address
 
 Über Oracle Virtual Box habe ich eine Portweiterleitung hergestellt. Das bedeutet ich sage dem System: Wenn etwas von xxx Ip Adresse + Port ankommt schicke es an xxx Ip Adresse + Port. 
 ![Angaben zur Portweiterleitung](Screenshots/PortWeiterLeitung.png)
+
 Host -> Angaben zu meiner VM 
 Gast -> Angaben zu meinem PC 
 Gast Port 2222 -> Vorschlag von einem LLM; bei der Wahl dieses Ports geht es einfach darum etwas zu nehmen, was nicht bereits von einem anderen Programm belegt wird
