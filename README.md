@@ -100,7 +100,7 @@ choom9 -> Benutzername, mit dem ich mich bei Ubuntu anmelden will
 @ -> trennt Benutzername und Zieladresse
 127.0.0.1 -> Der Windows PC selbst 
 
-![shh Befehl und Ausgabe](Befehl_Powershell_zu_Server.png)
+![shh Befehl und Ausgabe](Screenshots/Befehl_Powershell_zu_Server.png)
 
 Also zusammengefasst: Verbinde dich als Benutzer Choom9 mit der Adresse 127.0.0.1 (die Adresse meines PCs) über Port 2222. 
 -> Das klappt weil, durch die Portweiterleitung, die Verbindung automatisch an meine Ubuntu VM unter 10.0.1.15 auf Port 22 weitergeleitet wird. 
@@ -108,5 +108,5 @@ Also zusammengefasst: Verbinde dich als Benutzer Choom9 mit der Adresse 127.0.0.
 Dann kam eine Sicherheitsanfrage in der sinngemäß gefragt wurde ob man diesem SSH Server trauen kann. -> YES
 Zum Schluss musste ich noch mein Home-Lab Passwort eingeben... Fertig. Ich konnte meine VM über Powershell von meinem PC steuern.
 
-![Zugriff von meinem Windows Pc auf meine VM](Pc_zugriff_auf_VM.png)
+![Zugriff von meinem Windows Pc auf meine VM](Screenshots/Pc_zugriff_auf_VM.png)
 
