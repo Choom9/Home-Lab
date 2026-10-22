@@ -61,8 +61,13 @@ Bei diesem Step sorge ich dafür, dass ich meinen Server auch von meinem PC aus 
 ![Ausgabe des Befehls: "ip addr"](Screenshots/ipAddrScreen.png)
 
 Das ist ein Bild der Ausgabe nach dem Befehl. Ich habe für mich 5 wichtige Dinge markiert und versuche sie zu erklären:
+
 blau: "lo:" -> Steht für loopback -> Ist für die Kommunikation innerhalb des Computers. Wenn ein Programm mit einem anderen innerhalb der VM kommuniziert braucht es loopback Angaben
+
 grün: "link/loopback" -> Die folgende Schnittstelle ist vom Typ Loopback
+
 lila: "enp0s3" -> en = Ethernet, p0 = Bus/Pfad Position (eigentlich gemeint für PCI Bus bei Hardware, VM simuliert aber die Struktur), s3 = Slot Position; Die Netzwerkschnittstelle meiner VM mit der sie mit anderen Systemen kommunizieren kann
+
 orange: "link/ether" -> Die folgende Schnittstelle ist vom Typ Loopback
+
 weiss: "10.0.2.15" -> Die IPv4-Adresse meiner VM an der Netzwerkschnittstelle enp0s3; DIE BRAUCHE ICH
