@@ -56,7 +56,7 @@ Um es in meinen Worten zusammenzufassen: Ich habe einen Computer in meinem Compu
 
 ### Schritt 2: Remote Zugriff einrichten
 
-Bei diesem Step sorge ich dafür, dass ich meinen Server auch von meinem PC aus steuern und verwalten kann. Dafür brauche ich den Dienst SSH (Secure Shell). SSH ist ein Verfahren mit dem man sich verschlüsselt über ein Netzwerk auf einem andern Rechner anmelden und diesen über die Kommandozeile steuern kann. Damit das funktioniert muss meine VM ein Programm haben, dass SSH Verbindungen annehmen kann (wurde bei meinem Home-Lab schon während der Ubuntu Installation gemacht), und mein PC ein Programm haben, dass SSH Verbindungen starten kann. Ok... Ich starte meinen Server und melde mich an. Jetzt muss ich erstmal die IP Adresse meiner VM herausfinden. Das geht mit dem Befehl: "ip addr". 
+Bei diesem Step sorge ich dafür, dass ich meinen Server auch von meinem PC aus steuern und verwalten kann. Dafür brauche ich den Dienst SSH (Secure Shell). SSH ist ein Verfahren mit dem man sich verschlüsselt über ein Netzwerk auf einem anderen Rechner anmelden und diesen über die Kommandozeile steuern kann. Damit das funktioniert muss meine VM ein Programm haben, dass SSH Verbindungen annehmen kann (wurde bei meinem Home-Lab schon während der Ubuntu Installation gemacht), und mein PC ein Programm haben, dass SSH Verbindungen starten kann. Ok... Ich starte meinen Server und melde mich an. Jetzt muss ich erstmal die IP Adresse meiner VM herausfinden. Das geht mit dem Befehl: "ip addr". 
 
 ![Ausgabe des Befehls: "ip addr"](Screenshots/ipAddrScreen.png)
 
@@ -77,7 +77,7 @@ Das Ergebnis war "Active: Inactive (Dead)
 
 ![Funktioniert SSH auf dem Server?](Screenshots/SSHaufServerReadyCheck.png)
 
-Deswegen musste ich den Befehl "sudo systemctl start ssh" ausführen -> ich habe SSH mit administrator Rechten gestartet. Dann habe ich wieder "system status ssh". ERGEBNIS: SSH LÄUFT! und ich konnte die port Nummer ablesen (Port 22). Ok was ist ein Port? Also: Die IP-Adresse sagt "welcher Rechner" angesprochen werden soll und der Port sagt "welcher Dienst" auf diesem Rechner angesprochen werden soll.
+Deswegen musste ich den Befehl "sudo systemctl start ssh" ausführen -> ich habe SSH mit administrator Rechten gestartet. Dann habe ich wieder "system status ssh" ausgeführt. ERGEBNIS: SSH LÄUFT! und ich konnte die port Nummer ablesen (Port 22). Ok was ist ein Port? Also: Die IP-Adresse sagt "welcher Rechner" angesprochen werden soll und der Port sagt "welcher Dienst" auf diesem Rechner angesprochen werden soll.
 Das heißt der SSH Dienst läuft auf Port 22. Wenn ich das kombiniere mit der IP Adresse meiner VM habe ich die Adresse, die ich mit meinem PC erreichen will: 10.0.2.15:22
 
 ![SSH zum Laufen gebracht und Port Herausgefunden](Screenshots/SSH_läuft_und_Port_ist_da.png)
@@ -94,19 +94,24 @@ Gast Port 2222 -> Vorschlag von einem LLM; bei der Wahl dieses Ports geht es ein
 Und dann konnte ich testen ob ich mit meinem PC die VM ansprechen konnte.
 
 Auf gings zu Powershell. Dort gab ich den Befehl "ssh -p 2222 choom9@127.0.0.1" ein.
+
 ssh -> Startet den SSH Client auf Windows
+
 -p 2222 -> Benutze Port 2222
+
 choom9 -> Benutzername, mit dem ich mich bei Ubuntu anmelden will
+
 @ -> trennt Benutzername und Zieladresse
+
 127.0.0.1 -> Der Windows PC selbst 
 
 ![shh Befehl und Ausgabe](Screenshots/Befehl_Powershell_zu_Server.png)
 
 Also zusammengefasst: Verbinde dich als Benutzer Choom9 mit der Adresse 127.0.0.1 (die Adresse meines PCs) über Port 2222. 
--> Das klappt weil, durch die Portweiterleitung, die Verbindung automatisch an meine Ubuntu VM unter 10.0.1.15 auf Port 22 weitergeleitet wird. 
+-> Das klappt, weil, durch die Portweiterleitung, die Verbindung automatisch an meine Ubuntu VM unter 10.0.1.15 auf Port 22 weitergeleitet wird. 
 
 Dann kam eine Sicherheitsanfrage in der sinngemäß gefragt wurde ob man diesem SSH Server trauen kann. -> YES
-Zum Schluss musste ich noch mein Home-Lab Passwort eingeben... Fertig. Ich konnte meine VM über Powershell von meinem PC steuern.
+Zum Schluss musste ich noch mein Home-Lab Passwort eingeben... Fertig. Ich konnte meine VM über Powershell von meinem PC aus steuern.
 
 ![Zugriff von meinem Windows Pc auf meine VM](Screenshots/Pc_zugriff_auf_VM.png)
 
